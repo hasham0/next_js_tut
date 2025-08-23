@@ -1,11 +1,23 @@
-import React from 'react';
+import Link from 'next/link';
 
 type Props = {};
 
 const Header = ({}: Props) => {
   return (
-    <div className="bg-white text-xl text-center capitalize text-black">
-      header
+    <div>
+      <nav className="bg-white text-xl text-black py-3">
+        <ul className="flex justify-center space-x-4">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
