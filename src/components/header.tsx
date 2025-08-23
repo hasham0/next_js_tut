@@ -20,6 +20,9 @@ const Header = ({}: Props) => {
             <Link href="/products">Products</Link>
           </li>
           <li>
+            <Link href="/docs">Docs</Link>
+          </li>
+          <li>
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
