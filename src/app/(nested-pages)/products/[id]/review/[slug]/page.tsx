@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ id: string; slug: string }>;
@@ -6,6 +7,10 @@ type Props = {
 
 export default async function DynamicBlogPage({ params }: Props) {
   const { id: productID, slug: reviewID } = await params;
+  if (parseInt(reviewID) > 1000) {
+    notFound();
+  }
+
   return (
     <div>
       <p>Product ID: {productID}</p>
