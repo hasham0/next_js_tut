@@ -6,7 +6,7 @@ const Header = ({}: Props) => {
   return (
     <div>
       <nav className="bg-white text-xl text-black py-3">
-        <ul className="flex justify-center space-x-4">
+        <ul className="flex justify-evenly space-x-4">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -15,6 +15,9 @@ const Header = ({}: Props) => {
           </li>
           <li>
             <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/products">Products</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
