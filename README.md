@@ -2,4 +2,4 @@
 
 # basic layout done
 
-# routing done
+# routing and folder/file structure done
