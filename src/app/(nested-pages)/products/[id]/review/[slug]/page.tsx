@@ -16,7 +16,7 @@ export default async function DynamicBlogPage({ params }: Props) {
       <p>Product ID: {productID}</p>
       <p>Review ID: {reviewID}</p>
 
-      <div className="border-2 border-gray-400 bg-gray-400 flex justify-center items-center w-full py-2 my-10">
+      <div className="border-2 border-gray-400 bg-gray-400 flex justify-center items-center min-w-full py-2 px-5 my-10">
         <Link href={`/products/${productID}`}>Back to Reviews</Link>
       </div>
     </div>
