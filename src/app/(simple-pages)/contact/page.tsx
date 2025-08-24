@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
+
 type Props = {};
 
+export const metadata: Metadata = {
+  title: "Contact",
+};
 export default function ContactPage({}: Props) {
   return (
     <div>

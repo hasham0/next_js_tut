@@ -1,13 +1,35 @@
+import { Metadata } from "next";
+
 type Props = {
   params: Promise<{ data: string[] }>;
 };
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { data } = await params;
+  if (data?.length === 1) {
+    return {
+      title: `Docs - ${data[0]}`,
+    };
+  }
+
+  if (data?.length > 1) {
+    return {
+      title: `Docs - ${data.join(", ")}`,
+    };
+  }
+  return {
+    title: "Docs",
+  };
+};
+
 export default async function DocsPage({ params }: Props) {
   const { data } = await params;
   if (data?.length === 1) {
     return <p>docs data {data[0]}</p>;
   }
   if (data?.length > 1) {
-    return <p>docs data {data.join(', ')}</p>;
+    return <p>docs data {data.join(", ")}</p>;
   }
   return (
     <div>

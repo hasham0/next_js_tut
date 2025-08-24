@@ -1,8 +1,17 @@
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
 type Props = {};
 
-export default function BlogPage({}: Props) {
+export const metadata: Metadata = {
+  title: "Blog",
+};
+export default async function BlogPage({}: Props) {
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve("delay");
+    }, 1000)
+  );
   return (
     <div>
       <p>Blog page</p>
@@ -15,7 +24,7 @@ export default function BlogPage({}: Props) {
       </p>
       <div className="border-2 border-gray-500 p-4 flex justify-evenly my-10">
         {Array.from({ length: 5 }).map((_, i) => (
-          <Link key={i} href={`/blog/${i + 1}`}>
+          <Link key={i} href={`/blog/${i + 1}`} replace>
             Blog post {i + 1}
           </Link>
         ))}

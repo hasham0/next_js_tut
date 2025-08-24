@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
+
 import LineChart from "./line-chart";
 
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 export default function Dashboard() {
   return (
     <div>

@@ -2,21 +2,30 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ articleId: string }>;
+  searchParams: Promise<{ lang: string }>;
 };
 export const generateMetadata = async ({
-  params,
+  searchParams,
 }: Props): Promise<Metadata> => {
-  const { id } = await params;
+  const { lang } = await searchParams;
+
   return {
-    title: `Blog post ${id}`,
+    title: { absolute: `Article - ${lang}` },
   };
 };
-export default async function DynamicBlogPage({ params }: Props) {
-  const { id: blogId } = await params;
+export default async function LetterPage({ params, searchParams }: Props) {
+  const { articleId } = await params;
+  const { lang } = await searchParams;
   return (
     <div>
-      <p>Blog Number: {blogId}</p>
+      <p>
+        Article ID:&nbsp;
+        {articleId.split(/-/g).map((name, index) => (
+          <span key={index}>{name[0].toUpperCase() + name.slice(1)} </span>
+        ))}
+      </p>
+      <p>Language: {lang[0].toUpperCase() + lang.slice(1)}</p>
       <p className="text-gray-600 dark:text-gray-400 my-4 max-w-lg mx-auto">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat minima
         veniam nihil. Nisi rem excepturi impedit est inventore, dicta, voluptas
@@ -25,7 +34,7 @@ export default async function DynamicBlogPage({ params }: Props) {
         iusto eligendi mollitia optio nam natus rem ipsum quis eos! Illum!
       </p>{" "}
       <div className="border-2 border-gray-400 bg-gray-400 flex justify-center items-center w-full py-2 my-10">
-        <Link href={`/blog`}>Back to Blog</Link>
+        <Link href={`/article`}>Back to Articles</Link>
       </div>
     </div>
   );
