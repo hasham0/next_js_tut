@@ -1,6 +1,6 @@
 "use client";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { usePathname } from "next/navigation";
 
 export const metadata: Metadata = {
