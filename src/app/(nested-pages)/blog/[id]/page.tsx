@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -22,7 +23,10 @@ export default async function DynamicBlogPage({ params }: Props) {
         asperiores dolorem officiis autem ipsa obcaecati omnis nesciunt eveniet.
         Eius laboriosam impedit ex beatae quod, ad corrupti maiores doloremque
         iusto eligendi mollitia optio nam natus rem ipsum quis eos! Illum!
-      </p>
+      </p>{" "}
+      <div className="border-2 border-gray-400 bg-gray-400 flex justify-center items-center w-full py-2 my-10">
+        <Link href={`/blog`}>Back to Blog</Link>
+      </div>
     </div>
   );
 }
