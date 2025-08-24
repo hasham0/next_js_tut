@@ -6,7 +6,12 @@ type Props = {};
 export const metadata: Metadata = {
   title: "Blog",
 };
-export default function BlogPage({}: Props) {
+export default async function BlogPage({}: Props) {
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve("delay");
+    }, 1000)
+  );
   return (
     <div>
       <p>Blog page</p>
