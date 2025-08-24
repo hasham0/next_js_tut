@@ -13,7 +13,10 @@ const Header = ({}: Props) => {
     { href: "/blog", label: "Blog" },
     { href: "/products", label: "Products" },
     { href: "/order", label: "Order" },
+    { href: "/dashboard", label: "Dashboard" },
+    { href: "/complex-dashboard", label: "Complex Dashboard" },
     { href: "/docs", label: "Docs" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/article", label: "Article" },
     { href: "/log", label: "Log" },
     { href: "/counter", label: "Counter" },
@@ -33,7 +36,7 @@ const Header = ({}: Props) => {
                 : "hover:text-blue-300";
             return (
               <li key={link.href}>
-                <Link href={link.href} className={isActive}>
+                <Link href={link.href} className={isActive} replace prefetch>
                   {link.label}
                 </Link>
               </li>
