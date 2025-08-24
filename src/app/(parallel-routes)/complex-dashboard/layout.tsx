@@ -5,6 +5,7 @@ type Props = {
   users: ReactNode;
   revenues: ReactNode;
   notifications: ReactNode;
+  login: ReactNode;
 };
 
 export default function ComplexDashboardLayout({
@@ -12,8 +13,11 @@ export default function ComplexDashboardLayout({
   users,
   revenues,
   notifications,
+  login,
 }: Props) {
-  return (
+  const isLoggedIn = !false;
+
+  return isLoggedIn ? (
     <div>
       <div>{children}</div>
       <div style={{ display: "flex" }}>
@@ -24,5 +28,7 @@ export default function ComplexDashboardLayout({
         <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
       </div>
     </div>
+  ) : (
+    <div>{login}</div>
   );
 }
