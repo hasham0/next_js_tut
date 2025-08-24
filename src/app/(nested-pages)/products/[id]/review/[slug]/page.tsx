@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+//import { redirect } from "next/navigation";
+
 type Props = {
   params: Promise<{ id: string; slug: string }>;
 };
@@ -18,6 +20,7 @@ export default async function DynamicBlogPage({ params }: Props) {
   const { id: productID, slug: reviewID } = await params;
   if (parseInt(reviewID) > 1000) {
     notFound();
+    // redirect("/products");
   }
 
   return (
