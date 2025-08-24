@@ -1,7 +1,17 @@
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ id: string }>;
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id } = await params;
+  return {
+    title: `Product ${id}`,
+  };
 };
 
 export default async function DynamicProductPage({ params }: Props) {
@@ -22,7 +32,7 @@ export default async function DynamicProductPage({ params }: Props) {
             Review {i + 1}
           </Link>
         ))}
-      </div>{' '}
+      </div>{" "}
       <div className="border-2 border-gray-400 bg-gray-400 flex justify-center items-center w-full py-2 my-10">
         <Link href={`/products`}>Back to Products</Link>
       </div>

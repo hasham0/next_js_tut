@@ -1,10 +1,19 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ id: string; slug: string }>;
 };
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id, slug } = await params;
 
+  return {
+    title: `Product ${id} - Review ${slug}`,
+  };
+};
 export default async function DynamicBlogPage({ params }: Props) {
   const { id: productID, slug: reviewID } = await params;
   if (parseInt(reviewID) > 1000) {

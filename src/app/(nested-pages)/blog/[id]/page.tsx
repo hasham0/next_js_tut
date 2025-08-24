@@ -1,7 +1,16 @@
+import { Metadata } from "next";
+
 type Props = {
   params: Promise<{ id: string }>;
 };
-
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id } = await params;
+  return {
+    title: `Blog post ${id}`,
+  };
+};
 export default async function DynamicBlogPage({ params }: Props) {
   const { id: blogId } = await params;
   return (

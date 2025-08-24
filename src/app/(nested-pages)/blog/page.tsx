@@ -1,7 +1,11 @@
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
 type Props = {};
 
+export const metadata: Metadata = {
+  title: "Blog",
+};
 export default function BlogPage({}: Props) {
   return (
     <div>

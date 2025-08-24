@@ -1,6 +1,11 @@
 "use client";
 
+import { Metadata } from "next";
 import { usePathname } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Not Found",
+};
 
 export default function NotFound() {
   const pathname = usePathname();
