@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 type Props = {};
 
@@ -24,6 +24,9 @@ const Header = ({}: Props) => {
           </li>
           <li>
             <Link href="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link href="/login">Login</Link>
           </li>
         </ul>
       </nav>
