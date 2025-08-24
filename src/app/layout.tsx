@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import ErrorWrapper from "@/app/(global-error)/error-wrapper";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
@@ -35,7 +36,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <main className="min-h-svh text-center p-5">{children}</main>
+        <main className="min-h-svh text-center p-5">
+          <ErrorWrapper>{children}</ErrorWrapper>
+        </main>
         <Footer />
       </body>
     </html>
