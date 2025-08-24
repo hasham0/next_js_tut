@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 type Props = {};
 
 export const metadata: Metadata = {
-  title: "About",
+  title: {
+    absolute: "About",
+  },
 };
 
 export default function AboutPage({}: Props) {
