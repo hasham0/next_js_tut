@@ -13,6 +13,8 @@ const Header = ({}: Props) => {
     { href: "/blog", label: "Blog" },
     { href: "/products", label: "Products" },
     { href: "/order", label: "Order" },
+    { href: "/dashboard", label: "Dashboard" },
+    { href: "/complex-dashboard", label: "Complex Dashboard" },
     { href: "/docs", label: "Docs" },
     { href: "/article", label: "Article" },
     { href: "/log", label: "Log" },
