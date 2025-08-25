@@ -21,3 +21,13 @@
 # (..)(..) two level up/down route
 
 # (...) app level
+
+<!-- end -->
+
+# server route
+
+# http verbs GET,POST,PUT,PATCH,DELETE done
+
+# search params, headers , cookies , redirect, caching done
+
+# middleware, set cookies , set header
