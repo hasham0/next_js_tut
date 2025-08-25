@@ -21,3 +21,9 @@
 # (..)(..) two level up/down route
 
 # (...) app level
+
+# server route
+
+# http verbs GET,POST,PUT,PATCH,DELETE done
+
+# search params, headers , cookies , redirect, caching done
