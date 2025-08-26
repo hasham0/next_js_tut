@@ -1,5 +1,4 @@
-import React from "react";
-
+export const dynamicParams = true;
 type Props = {
   params: Promise<{ id: string }>;
 };
