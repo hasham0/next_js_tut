@@ -8,6 +8,14 @@ import { NextResponse, type NextRequest } from "next/server";
 // }
 
 // TODO: implement authentication check
+// export function middleware(request: NextRequest) {
+//   return NextResponse.redirect(new URL("/login", request.url));
+// }
+// export const config = {
+//   matcher: ["/about/:path*"],
+// };
+
+// TODO: set cookies and headers
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
   const theme = request.cookies.get("theme");
@@ -17,6 +25,3 @@ export function middleware(request: NextRequest) {
   response.headers.set("custom-header", "custom-value");
   return response;
 }
-export const config = {
-  matcher: ["/about/:path*"],
-};
