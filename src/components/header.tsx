@@ -15,14 +15,15 @@ const Header = ({}: Props) => {
     { href: "/products", label: "Products" },
     { href: "/order", label: "Order" },
     { href: "/dashboard", label: "Dashboard" },
-    { href: "/complex-dashboard", label: "Complex Dashboard" },
-    { href: "/docs", label: "Docs" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/article", label: "Article" },
-    { href: "/log", label: "Log" },
-    { href: "/counter", label: "Counter" },
-    { href: "/contact", label: "Contact" },
-    { href: "/login", label: "Auth" },
+    { href: "/shop", label: "Shopping" },
+    // { href: "/complex-dashboard", label: "Complex Dashboard" },
+    // { href: "/docs", label: "Docs" },
+    // { href: "/gallery", label: "Gallery" },
+    // { href: "/article", label: "Article" },
+    // { href: "/log", label: "Log" },
+    // { href: "/counter", label: "Counter" },
+    // { href: "/contact", label: "Contact" },
+    // { href: "/login", label: "Auth" },
   ];
 
   return (
