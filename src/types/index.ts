@@ -5,5 +5,13 @@ type User = {
   username: string;
   phone: string;
 };
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+};
 
-export type { User };
+type Author = Pick<User, "id" | "name">;
+
+export type { User, Post, Author };

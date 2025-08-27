@@ -1,22 +1,11 @@
 "use client";
 
-// import { assert } from "node:console";
 import { useEffect, useState } from "react";
 
 import UserCard from "@/components/user-card";
 import { User } from "@/types";
 
 type Props = {};
-// function getUserData(userData: User[]): User[] {
-//   userData.map((user) => {
-//     assert(user.id !== undefined, "ID is required");
-//     assert(user.name !== undefined, "Name is required");
-//     assert(user.email !== undefined, "Email is required");
-//     assert(user.username !== undefined, "Username is required");
-//     assert(user.phone !== undefined, "Phone is required");
-//   });
-//   return userData;
-// }
 
 export default function ClientSide({}: Props) {
   const [users, setUsers] = useState<User[]>([]);

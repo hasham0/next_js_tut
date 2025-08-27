@@ -5,7 +5,7 @@ import { User } from "@/types";
 
 type Props = {};
 
-async function getUserData(userData: User[]): Promise<User[]> {
+async function validateUser(userData: User[]): Promise<User[]> {
   userData.map((user) => {
     assert(user.id !== undefined, "ID is required");
     assert(user.name !== undefined, "Name is required");
@@ -19,7 +19,7 @@ export default async function ServerSide({}: Props) {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
   await new Promise((resolve) => setTimeout(resolve, 3000));
-  const users = await getUserData(data);
+  const users = await validateUser(data);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
