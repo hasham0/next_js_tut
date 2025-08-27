@@ -1,5 +1,3 @@
-import React from "react";
-
 import ThemeSection from "@/components/theme-section";
 
 type Props = {};

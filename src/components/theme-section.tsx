@@ -1,10 +1,13 @@
 "use client";
 
 import { useTheme } from "@/app/(context)/wrapper/ContextWrapper";
+import clientSideFunction from "@/utils/client-utils";
 
 type Props = {};
 
 const ThemeSection = ({}: Props) => {
+  const result = clientSideFunction();
+  console.log("🚀 ~ ThemeSection ~ result:", result);
   const { currentTheme, setCurrentTheme } = useTheme();
   return (
     <div
