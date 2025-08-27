@@ -10,6 +10,8 @@ const Header = ({}: Props) => {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/theme", label: "Theme" },
+    { href: "/data", label: "Data" },
+
     // { href: "/about", label: "About" },
     // { href: "/blog", label: "Blog" },
     // { href: "/profile", label: "Profile" },
