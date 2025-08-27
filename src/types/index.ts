@@ -14,4 +14,6 @@ type Post = {
 
 type Author = Pick<User, "id" | "name">;
 
-export type { User, Post, Author };
+type Album = Pick<Post, "id" | "title" | "userId">;
+
+export type { User, Post, Author, Album };

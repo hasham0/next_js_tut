@@ -1,4 +1,5 @@
 import { assert } from "node:console";
+import Link from "next/link";
 
 import { Author } from "@/types";
 
@@ -19,9 +20,20 @@ export default async function AuthorSection({ userId }: Props) {
   const data: Author = await response.json();
   const author = await validateAuthor(data);
   return (
-    <div className="mt-4 p-4 border-t text-sm">
-      <p className="font-bold">Author:</p>
-      <p>{author.name}</p>
+    <div className="mt-4 p-4  border-t text-sm">
+      <div className="">
+        <p className="font-bold">Author:</p>
+        <p>{author.name}</p>
+      </div>
+
+      <Link
+        href={`/parallel-side/${userId}`}
+        className="flex justify-end w-full"
+      >
+        <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+          view more
+        </button>
+      </Link>
     </div>
   );
 }

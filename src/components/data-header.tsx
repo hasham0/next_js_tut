@@ -9,7 +9,6 @@ const DataHeader = () => {
     { href: "/client-side", label: "client" },
     { href: "/server-side", label: "server" },
     { href: "/sequential-side", label: "sequential" },
-    { href: "/parallel-side", label: "parallel" },
     { href: "/database-side", label: "database" },
   ];
   return (
